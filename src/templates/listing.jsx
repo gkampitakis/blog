@@ -6,13 +6,13 @@ import PostListing from '../components/PostListing';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
 
-class Listing extends React.Component {
-	renderPaging() {
-		const { currentPageNum, pageCount } = this.props.pageContext;
-		const prevPage = currentPageNum - 1 === 1 ? '/' : `/${currentPageNum - 1}/`;
-		const nextPage = `/${currentPageNum + 1}/`;
-		const isFirstPage = currentPageNum === 1;
-		const isLastPage = currentPageNum === pageCount;
+export default (props) => {
+	const renderPaging = () => {
+		const { currentPageNum, pageCount } = props.pageContext,
+			prevPage = currentPageNum - 1 === 1 ? '/' : `/${currentPageNum - 1}/`,
+			nextPage = `/${currentPageNum + 1}/`,
+			isFirstPage = currentPageNum === 1,
+			isLastPage = currentPageNum === pageCount;
 
 		return (
 			<div className="paging-container">
@@ -28,27 +28,23 @@ class Listing extends React.Component {
 				{!isLastPage && <Link to={nextPage}>Next</Link>}
 			</div>
 		);
-	}
+	};
 
-	render() {
-		const postEdges = this.props.data.allMarkdownRemark.edges;
+	const postEdges = props.data.allMarkdownRemark.edges;
 
-		return (
-			<Layout>
-				<div className="listing-container">
-					<div className="posts-container">
-						<Helmet title={config.siteTitle} />
-						<SEO />
-						<PostListing postEdges={postEdges} />
-					</div>
-					{this.renderPaging()}
+	return (
+		<Layout>
+			<div className="listing-container">
+				<div className="posts-container">
+					<Helmet title={config.siteTitle} />
+					<SEO />
+					<PostListing postEdges={postEdges} />
 				</div>
-			</Layout>
-		);
-	}
-}
-
-export default Listing;
+				{renderPaging()}
+			</div>
+		</Layout>
+	);
+};
 
 /* eslint no-undef: "off" */
 export const listingQuery = graphql`

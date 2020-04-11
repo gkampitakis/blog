@@ -5,9 +5,10 @@ import { Link } from 'gatsby';
 //TODO: props type
 
 export default (props) => {
-	const { config } = props;
-	const url = config.siteRss;
-	const { copyright } = config;
+	const { config } = props,
+		url = config.siteRss,
+		{ copyright } = config;
+
 	if (!copyright) {
 		return null;
 	}
@@ -16,13 +17,7 @@ export default (props) => {
 		<footer className="footer">
 			<div className="notice-container">
 				<h4>{copyright}</h4>
-
-				<Link to={url}>
-					<button>Subscribe</button>
-				</Link>
-				<h4>
-					Based on <a href="https://github.com/Vagr9K/gatsby-advanced-starter">Gatsby Advanced Starter</a>.
-				</h4>
+				<h4>Footer Page</h4>
 			</div>
 		</footer>
 	);
