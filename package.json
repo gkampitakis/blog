@@ -14,6 +14,7 @@
 		"gatsby-plugin-nprogress": "^2.2.1",
 		"gatsby-plugin-offline": "^3.1.2",
 		"gatsby-plugin-react-helmet": "^3.2.1",
+		"gatsby-plugin-sass": "^2.2.1",
 		"gatsby-plugin-sharp": "^2.5.3",
 		"gatsby-plugin-sitemap": "^2.3.1",
 		"gatsby-plugin-twitter": "^2.2.1",
@@ -28,6 +29,7 @@
 		"gatsby-transformer-sharp": "^2.4.3",
 		"lodash": "^4.17.15",
 		"moment": "^2.24.0",
+		"node-sass": "^4.13.1",
 		"prismjs": "^1.19.0",
 		"react": "^16.13.1",
 		"react-disqus-comments": "^1.4.0",
@@ -57,8 +59,8 @@
 	"keywords": [
 		"blog",
 		"tech",
-        "post",
-        "gkampitakis"
+		"post",
+		"gkampitakis"
 	],
 	"license": "MIT",
 	"main": "n/a",

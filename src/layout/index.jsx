@@ -1,19 +1,22 @@
-import React from "react";
-import Helmet from "react-helmet";
-import config from "../../data/SiteConfig";
-import "./index.css";
+import React from 'react';
+import Helmet from 'react-helmet';
+import config from '../../data/SiteConfig';
+import '../styles/main.scss';
+import Footer from '../components/Footer';
+import Navigation from '../components/Navigation';
 
-export default class MainLayout extends React.Component {
-  render() {
-    const { children } = this.props;
-    return (
-      <div className="layout-container">
-        <Helmet>
-          <meta name="description" content={config.siteDescription} />
-          <html lang="en" />
-        </Helmet>
-        {children}
-      </div>
-    );
-  }
-}
+export default (props) => {
+	const { children } = props;
+
+	return (
+		<>
+			<Helmet>
+				<meta name="description" content={config.siteDescription} />
+				<html lang="en" />
+			</Helmet>
+			<Navigation />
+			{children}
+			<Footer config={config} />
+		</>
+	);
+};
