@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import urljoin from 'url-join';
 import moment from 'moment';
-import config from '../../../data/SiteConfig';
+import config from '../../data/SiteConfig';
 
 export default (props) => {
 	const { postNode, postPath, postSEO } = props;
@@ -11,9 +11,7 @@ export default (props) => {
 	if (postSEO) {
 		const postMeta = postNode.frontmatter;
 		({ title } = postMeta);
-		description = postMeta.description
-			? postMeta.description
-			: postNode.excerpt;
+		description = postMeta.description ? postMeta.description : postNode.excerpt;
 		image = postMeta.cover;
 		postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
 	} else {
@@ -23,11 +21,7 @@ export default (props) => {
 	}
 
 	const getImagePath = (imageURI) => {
-		if (
-			!imageURI.match(
-				`(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]`
-			)
-		)
+		if (!imageURI.match(`(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]`))
 			return urljoin(config.siteUrl, config.pathPrefix, imageURI);
 
 		return imageURI;
@@ -51,12 +45,12 @@ export default (props) => {
 		'@type': 'Person',
 		name: config.userName,
 		email: config.userEmail,
-		address: config.userLocation,
+		address: config.userLocation
 	};
 
 	const logoJSONLD = {
 		'@type': 'ImageObject',
-		url: getImagePath(config.siteLogo),
+		url: getImagePath(config.siteLogo)
 	};
 
 	const blogURL = urljoin(config.siteUrl, config.pathPrefix);
@@ -66,8 +60,8 @@ export default (props) => {
 			'@type': 'WebSite',
 			url: blogURL,
 			name: title,
-			alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
-		},
+			alternateName: config.siteTitleAlt ? config.siteTitleAlt : ''
+		}
 	];
 	if (postSEO) {
 		schemaOrgJSONLD.push(
@@ -81,10 +75,10 @@ export default (props) => {
 						item: {
 							'@id': postURL,
 							name: title,
-							image,
-						},
-					},
-				],
+							image
+						}
+					}
+				]
 			},
 			{
 				'@context': 'http://schema.org',
@@ -98,10 +92,10 @@ export default (props) => {
 				publisher: {
 					...authorJSONLD,
 					'@type': 'Organization',
-					logo: logoJSONLD,
+					logo: logoJSONLD
 				},
 				datePublished,
-				description,
+				description
 			}
 		);
 	}
@@ -113,9 +107,7 @@ export default (props) => {
 			<meta name="image" content={image} />
 
 			{/* Schema.org tags */}
-			<script type="application/ld+json">
-				{JSON.stringify(schemaOrgJSONLD)}
-			</script>
+			<script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
 
 			{/* OpenGraph tags */}
 			<meta property="og:url" content={postSEO ? postURL : blogURL} />
@@ -123,17 +115,11 @@ export default (props) => {
 			<meta property="og:title" content={title} />
 			<meta property="og:description" content={description} />
 			<meta property="og:image" content={image} />
-			<meta
-				property="fb:app_id"
-				content={config.siteFBAppID ? config.siteFBAppID : ''}
-			/>
+			<meta property="fb:app_id" content={config.siteFBAppID ? config.siteFBAppID : ''} />
 
 			{/* Twitter Card tags */}
 			<meta name="twitter:card" content="summary_large_image" />
-			<meta
-				name="twitter:creator"
-				content={config.userTwitter ? config.userTwitter : ''}
-			/>
+			<meta name="twitter:creator" content={config.userTwitter ? config.userTwitter : ''} />
 			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={description} />
 			<meta name="twitter:image" content={image} />
