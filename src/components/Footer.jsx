@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import UserLinks from './UserLinks/UserLinks';
 
 //TODO: css
 //TODO: props type
@@ -15,7 +14,6 @@ export default (props) => {
 
 	return (
 		<footer className="footer">
-			<UserLinks config={config} labeled />
 			<div className="notice-container">
 				<h4>{copyright}</h4>
 
