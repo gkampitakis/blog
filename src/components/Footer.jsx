@@ -1,12 +1,10 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 //TODO: css
 //TODO: props type
 
 export default (props) => {
 	const { config } = props,
-		url = config.siteRss,
 		{ copyright } = config;
 
 	if (!copyright) {

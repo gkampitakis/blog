@@ -1,1 +1,7 @@
-@import './scaffolding//base.scss';
+/**Configuration*/
+@import './base/variables.scss';
+@import './base/mixins.scss';
+
+/**Dark Theme Colors*/
+@import './themes/dark.scss';
+@import './themes/light.scss';

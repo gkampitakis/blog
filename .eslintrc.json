@@ -13,6 +13,8 @@
 		"react/destructuring-assignment": "off",
 		"no-unused-vars": ["warn"],
 		"one-var": "off",
+		"import/prefer-default-export": "off",
+		"react/jsx-filename-extension": "off",
 		"jsx-a11y/anchor-is-valid": [
 			"error",
 			{

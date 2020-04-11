@@ -1,5 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ThemeContext from '../context/ThemeContext';
 
 export default (props) => {
-	return <div>Navigation Bar</div>;
+	const { toggleDark } = useContext(ThemeContext);
+
+	return (
+		<div>
+			<h1>Navigation Bar</h1>
+			<button onClick={toggleDark}>Dark Theme Context</button>
+		</div>
+	);
 };
