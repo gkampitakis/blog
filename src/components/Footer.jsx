@@ -1,21 +1,37 @@
 import React from 'react';
-
-//TODO: css
-//TODO: props type
+import avatar from '../images/avatar.png';
+import twitter from '../images/twitter.png';
+import gh from '../images/gh.png';
+import ln from '../images/ln.png';
 
 export default (props) => {
-	const { config } = props,
-		{ copyright } = config;
-
-	if (!copyright) {
-		return null;
-	}
+	const { socialLinks } = props.config,
+		images = {
+			twitter,
+			gh,
+			ln
+		};
 
 	return (
 		<footer className="footer">
-			<div className="notice-container">
-				<h4>{copyright}</h4>
-				<h4>Footer Page</h4>
+			<div className="container">
+				<div className="avatar">
+					Created by:
+					<a href="https://www.instagram.com/g.kampitakis/">
+						<img src={avatar} alt="Me" />
+					</a>
+				</div>
+				<div className="socials">
+					{socialLinks.map(({ url, image, label }) => {
+						return (
+							<div className="social" key={label}>
+								<a href={url} rel="noopener noreferrer" target="_blank">
+									<img src={images[image]} alt={label} />
+								</a>
+							</div>
+						);
+					})}
+				</div>
 			</div>
 		</footer>
 	);

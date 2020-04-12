@@ -55,21 +55,21 @@ const config = {
 	userDescription:
 		"Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people.", // User description to display in the author segment.
 	// Links to social profiles/projects you want to display in the author segment/navigation bar.
-	userLinks: [
+	socialLinks: [
 		{
 			label: 'GitHub',
-			url: 'https://github.com/Vagr9K/gatsby-advanced-starter',
-			iconClassName: 'fa fa-github'
+			url: 'https://github.com/gkampitakis',
+			image: 'gh'
 		},
 		{
 			label: 'Twitter',
-			url: 'https://twitter.com/Vagr9K',
-			iconClassName: 'fa fa-twitter'
+			url: 'https://twitter.com/g_kampitakis',
+			image: 'twitter'
 		},
 		{
-			label: 'Email',
-			url: 'mailto:vagr9k@gmail.com',
-			iconClassName: 'fa fa-envelope'
+			label: 'Linkedin',
+			url: 'https://www.linkedin.com/in/gkampitakis/',
+			image: 'ln'
 		}
 	],
 	menuLinks: [

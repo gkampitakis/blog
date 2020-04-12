@@ -34,4 +34,10 @@ $font-color: #b3b9c5;
 			}
 		}
 	}
+
+	.footer {
+		background: darken($background, 1);
+		border-color: $background;
+		transition: background-color 0.5s ease;
+	}
 }

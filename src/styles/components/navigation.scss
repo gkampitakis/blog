@@ -53,8 +53,7 @@
 			align-items: center;
 			padding: 1rem;
 			-webkit-user-drag: none;
-			margin: 0 1rem;
-			font-size: 1.05rem;
+			font-size: 1.1rem;
 			text-align: center;
 			transition: -webkit-transform 0.3s ease;
 
@@ -112,6 +111,8 @@
 
 		.logo-banner {
 			.text {
+				font-weight: 600;
+				font-size: 1.25rem;
 				display: flex;
 			}
 		}

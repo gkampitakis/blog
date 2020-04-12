@@ -28,4 +28,9 @@ $font-color: #454545;
 			}
 		}
 	}
+
+	.footer {
+		background: white;
+		transition: background-color 0.5s ease;
+	}
 }
