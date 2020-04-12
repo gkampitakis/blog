@@ -8,3 +8,14 @@
             + "Available breakpoints are: #{map-keys($breakpoints)}.";
 	}
 }
+
+@mixin font-face($family, $src, $weight: normal, $style: normal, $display: swap) {
+	@font-face {
+		font-family: $family;
+		font-style: $style;
+		font-weight: $weight;
+		font-display: $display;
+		src: url($base-url + $src + '.woff2') format('woff2'), url($base-url + $src + '.woff') format('woff');
+		@content;
+	}
+}

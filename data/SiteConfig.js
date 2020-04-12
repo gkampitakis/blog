@@ -75,15 +75,18 @@ const config = {
 	menuLinks: [
 		{
 			name: 'Home',
-			link: '/'
+			link: '/',
+			icon: '🏡'
 		},
 		{
 			name: 'Notes',
-			link: '/notes'
+			link: '/notes',
+			icon: '📝'
 		},
 		{
 			name: 'Contact',
-			link: '/contact'
+			link: '/contact',
+			icon: '📬'
 		}
 	],
 	copyright: 'Copyright © 2020. George Kampitakis', // Copyright string for the footer of the website and RSS feed.

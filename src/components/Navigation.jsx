@@ -31,10 +31,11 @@ export default (props) => {
 					</Link>
 				</div>
 				<div className="links">
-					{menuLinks.map(({ name, link }) => {
+					{menuLinks.map(({ name, link, icon }) => {
 						return (
 							<Link key={name} to={link} activeClassName="active">
-								{name}
+								<span className="text">{name}</span>
+								<span className="linkIcon">{emoji(icon)}</span>
 							</Link>
 						);
 					})}

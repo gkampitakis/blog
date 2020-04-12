@@ -1,5 +1,7 @@
-$tag: #6ab0f3;
+$base-url: '../../static/';
 $width: 850px;
+
+/**Breakpoints*/
 
 $breakpoints: (
 	'x-small': 720px,
@@ -7,3 +9,16 @@ $breakpoints: (
 	'medium': 1200px,
 	'large': 1300px
 ) !default;
+
+/**Fonts*/
+$font-style: normal;
+$font-variant: normal;
+$font-weight: normal;
+$font-family: Helvetica Neue, 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+$line-height: 1.6;
+$font-size: 1rem;
+$body-font-size: 1.15rem;
+
+/**Colors*/
+$tag: #6ab0f3;
+$link-color: #009b64ba;

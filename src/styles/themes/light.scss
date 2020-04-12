@@ -1,4 +1,5 @@
 $background: #f0f0f0;
+$font-color: #454545;
 
 .light {
 	background: $background;
@@ -7,5 +8,24 @@ $background: #f0f0f0;
 	.nav {
 		background: white;
 		transition: background-color 0.5s ease;
+
+		.logo-banner {
+			.text {
+				color: $font-color;
+				&:hover,
+				&:active,
+				&:focus {
+					color: darken($font-color, 20);
+				}
+			}
+		}
+
+		.links {
+			a {
+				&:hover {
+					color: darken($link-color, 10);
+				}
+			}
+		}
 	}
 }

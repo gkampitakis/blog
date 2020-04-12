@@ -3,6 +3,7 @@ $foreground: #b3b9c5;
 $accent: #303030;
 $dark-border: darken($background, 3%);
 $dark-primary: $tag;
+$font-color: #b3b9c5;
 
 .dark {
 	background: $background;
@@ -10,8 +11,27 @@ $dark-primary: $tag;
 	transition: background-color 0.5s ease;
 
 	.nav {
-		background: $background;
+		background: darken($background, 1);
 		border-color: $background;
 		transition: background-color 0.5s ease;
+
+		.logo-banner {
+			.text {
+				color: $font-color;
+				&:hover,
+				&:active,
+				&:focus {
+					color: lighten($font-color, 20);
+				}
+			}
+		}
+
+		.links {
+			a {
+				&:hover {
+					color: lighten($link-color, 10);
+				}
+			}
+		}
 	}
 }
