@@ -1,8 +1,41 @@
 const config = {
-	siteTitle: 'Gatsby Advanced Starter', // Site title.
-	siteTitleShort: 'GA Starter', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
-	siteTitleAlt: 'GatsbyJS Advanced Starter', // Alternative site title for SEO.
-	siteLogo: '/logos/logo-1024.png', // Logo used for SEO and manifest.
+	consoleMessage: `       
+    
+    
+                    '..----..'                    
+              '-+oyhhddddddddhhyo/-'              
+           .+yhddddddddddddddddddddhy+.           
+        '/yhdddddddddmmmmmmmmdddddddddhy/'        
+       /hhddddddmmmmmmmmmmmmmmmmmmddddddhh/'      
+     -yhddddddmmmmmmmmmmmmmmmmmmmmmmddddddhy-     
+    /hhddddddmmmmmmmmmmmmmmmmmmmmmmmmddddddhh/    
+   +hhddhso+////+oydmmmmmmmmmmdyo+////+oshddhh/   
+  :hhdh+::+syhhys+::+dmmmmmmd+::+syhhys+::+hdhh:  
+ 'yhhy::+dNNMNddNNdo::ymmmmy::odNNddNMNNd+::yhhy' 
+ :hhh:-omNNN/-:-.sNNs-:++++--sNNs-::./NNNmo-:hhh: 
+':/:---dNNNd.-::--NNm---::---mNN--::-.dNNNd---:/:'
+--://--yNNNNy/::+dNNd--ohhs--hNNd+::/yNNNNy--//:--
+':yyy/-:hmNNNNNNNNmd:-/dddd/-:dmNNNNNNNNmh:-/yyy:'
+ :yhhy/--+ydmmmmmy+--/hddddh/--+ymmmmmdy+--/yhhy: 
+ 'syhhys/-..-:::-.-/ydddddddhy/-.-:::-..-/syhyys' 
+  :yyyhyyyso++++oyhhhddddddddhhhyo++++osyyyhyyy-  
+   /yyyyyyyyyyhhhhhhhddddddddhhhhhhhhyyyyyyyyy/   
+    /yyyyyyyo'.:+syhhhhhhhhhhhhhhhhhhhyyyyyyy/    
+     -syyyyyys+-....::/+++oo+++//:syyyyyyyys-     
+       :syyyyyyyys+/::--------::/+yyyyyyys:       
+        ':osyyyyyyyyyhhyyyyyhhyyyyyyyyso:'        
+           ./ossyyyyyyyyyyyyyyyyyssso/.           
+              '-/+osssssssssssso+/-'              
+                    '..-.....'                   
+    
+**** This project is created by G.Kampitakis ****
+**** You can view the code at : github.com/gkampitakis/gkampitakis ****
+    
+    `,
+	siteTitle: 'George Kampitakis',
+	siteTitleShort: 'G.Kampitakis',
+	siteTitleAlt: 'George Kampitakis Posts',
+	siteLogo: '/logos/logo-512.png', // Logo used for SEO and manifest.
 	siteUrl: 'https://gatsby-advanced-starter-demo.netlify.com', // Domain of your website without pathPrefix.
 	pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
 	siteDescription: 'A GatsbyJS stater with Advanced design in mind.', // Website description used for RSS feeds/meta description tag.
@@ -37,6 +70,20 @@ const config = {
 			label: 'Email',
 			url: 'mailto:vagr9k@gmail.com',
 			iconClassName: 'fa fa-envelope'
+		}
+	],
+	menuLinks: [
+		{
+			name: 'Home',
+			link: '/'
+		},
+		{
+			name: 'Notes',
+			link: '/notes'
+		},
+		{
+			name: 'Contact',
+			link: '/contact'
 		}
 	],
 	copyright: 'Copyright © 2020. George Kampitakis', // Copyright string for the footer of the website and RSS feed.

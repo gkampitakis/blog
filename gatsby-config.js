@@ -83,8 +83,8 @@ module.exports = {
 				display: 'minimal-ui',
 				icons: [
 					{
-						src: '/logos/logo-192.png',
-						sizes: '192x192',
+						src: '/logos/logo-32.png',
+						sizes: '32x32',
 						type: 'image/png'
 					},
 					{
