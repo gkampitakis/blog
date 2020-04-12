@@ -7,6 +7,11 @@ $dark-primary: $tag;
 .dark {
 	background: $background;
 	color: $foreground;
-
 	transition: background-color 0.5s ease;
+
+	.nav {
+		background: $background;
+		border-color: $background;
+		transition: background-color 0.5s ease;
+	}
 }

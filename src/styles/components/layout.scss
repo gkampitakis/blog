@@ -1,0 +1,13 @@
+#main-content {
+	margin-top: 55px;
+	padding: 40px 0 0;
+	min-height: calc(100vh - 190px);
+}
+
+@include respond-to('x-small') {
+	#main-content {
+		margin-top: 140px;
+		padding: 60px 0 0;
+		min-height: calc(100vh - 360px);
+	}
+}

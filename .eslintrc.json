@@ -1,6 +1,6 @@
 {
 	"extends": ["airbnb", "prettier"],
-	"plugins": ["react", "jsx-a11y", "import"],
+	"plugins": ["react"],
 	"rules": {
 		"react/prefer-stateless-function": "off",
 		"react/prop-types": "off",
@@ -11,10 +11,13 @@
 		"react/jsx-one-expression-per-line": "off",
 		"react/button-has-type": "off",
 		"react/destructuring-assignment": "off",
+		"jsx-a11y/click-events-have-key-events": ["warn"],
+		"jsx-a11y/interactive-supports-focus": ["warn"],
 		"no-unused-vars": ["warn"],
 		"one-var": "off",
 		"import/prefer-default-export": "off",
 		"react/jsx-filename-extension": "off",
+		"import/order": "off",
 		"jsx-a11y/anchor-is-valid": [
 			"error",
 			{

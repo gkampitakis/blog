@@ -2,6 +2,10 @@ $background: #f0f0f0;
 
 .light {
 	background: $background;
-
 	transition: background-color 0.5s ease;
+
+	.nav {
+		background: white;
+		transition: background-color 0.5s ease;
+	}
 }
