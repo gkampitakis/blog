@@ -1,7 +1,10 @@
 #main-content {
+	display: flex;
+	margin: auto;
 	margin-top: 55px;
 	padding: 40px 0 0;
 	min-height: calc(100vh - 190px);
+	max-width: $width;
 }
 
 @include respond-to('x-small') {
@@ -9,10 +12,12 @@
 		margin-top: 140px;
 		padding: 60px 0 0;
 		min-height: calc(100vh - 340px);
+		max-width: $width;
 	}
 }
 
 .footer {
+	height: 150px;
 	width: 100%;
 	-webkit-user-select: none;
 	-webkit-user-drag: none;
@@ -62,6 +67,7 @@
 
 @include respond-to('x-small') {
 	.footer {
+		height: 200px;
 		.avatar {
 			img {
 				margin-left: 10px;
@@ -85,10 +91,9 @@
 
 .container {
 	display: flex;
-	height: 150px;
 	justify-content: space-between;
 	align-items: center;
-	width: 100%;
+	height: 100%;
 	max-width: $width;
 	padding: 0 1.5rem;
 	margin-left: auto;
@@ -97,7 +102,6 @@
 
 @include respond-to('x-small') {
 	.container {
-		height: 200px;
 		padding: 0 2rem;
 	}
 }

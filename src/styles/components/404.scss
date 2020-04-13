@@ -1,0 +1,71 @@
+.pageNotFound {
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	justify-content: center;
+	margin-bottom: 55px;
+
+	.statusCode {
+		font-family: 'Courier New', Courier, monospace;
+		font-size: 145px;
+		font-weight: 700;
+		z-index: -5;
+
+		&:first-child {
+			position: relative;
+			left: 25px;
+		}
+
+		&:nth-child(3) {
+			position: relative;
+			right: 30px;
+		}
+	}
+
+	.logo {
+		-webkit-user-select: none;
+		display: flex;
+		direction: row;
+		justify-content: center;
+		width: 100%;
+		margin: 0;
+		img {
+			position: relative;
+			top: 10px;
+			-webkit-user-drag: none;
+			height: 125px;
+		}
+	}
+
+	.description {
+		text-align: center;
+	}
+
+	h2 {
+		margin: 0;
+	}
+}
+
+@include respond-to('x-small') {
+	.pageNotFound {
+		margin-bottom: 140px;
+		// .statusCode {
+		// 	font-family: 'Courier New', Courier, monospace;
+		// 	font-size: 145px;
+		// 	font-weight: 700;
+		// 	z-index: -5;
+		// }
+
+		// .logo {
+		// 	img {
+		// 		height: 125px;
+		// 	}
+		// }
+
+		// .description {
+		// }
+
+		// .title {
+		// }
+	}
+}
