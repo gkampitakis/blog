@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import Layout from '../layout';
 import PostListing from '../components/PostListing';
@@ -8,6 +8,8 @@ import config from '../../data/SiteConfig';
 export default (props) => {
 	const { tag } = props.pageContext,
 		postEdges = props.data.allMarkdownRemark.edges;
+
+	console.log(props);
 
 	return (
 		<Layout>
