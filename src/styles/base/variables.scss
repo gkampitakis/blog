@@ -17,8 +17,41 @@ $font-weight: normal;
 $font-family: Helvetica Neue, 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
 $line-height: 1.6;
 $font-size: 1rem;
+$font-color: #454545;
 $body-font-size: 1.15rem;
 
 /**Colors*/
-$tag: #6ab0f3;
 $link-color: #009b64ba;
+
+/* Borders */
+$border-width: 2px;
+$border-style: solid;
+$border-color: #ccc;
+$border-radius: 6px;
+$borders: $border-width $border-style $border-color;
+$box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16);
+
+/**Code*/
+$code-color: $font-color;
+$code-size: 14px;
+$code-family: Menlo, monospace;
+$code-background: transparent;
+$code-borders: $borders;
+
+$code-family: Menlo, 'Roboto Mono', Courier New, monospace;
+
+$code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
+$code-font-color: #b3b9c5;
+$string: #92d192;
+$variable: #f2777a;
+$property: #abb2bf;
+$number: #fca369;
+$operator: #ac8d58;
+$punctuation: #d5d8df;
+$comment: #848991;
+$function: #62cfcf;
+$keyword: #ffeead;
+$attribute: #ffd479;
+$class: #e1a6f2;
+$tag: #6ab0f3;
+$error: #f2777a;

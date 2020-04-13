@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import urljoin from 'url-join';
 import moment from 'moment';
 import config from '../../data/SiteConfig';
@@ -115,7 +115,6 @@ export default (props) => {
 			<meta property="og:title" content={title} />
 			<meta property="og:description" content={description} />
 			<meta property="og:image" content={image} />
-			<meta property="fb:app_id" content={config.siteFBAppID ? config.siteFBAppID : ''} />
 
 			{/* Twitter Card tags */}
 			<meta name="twitter:card" content="summary_large_image" />

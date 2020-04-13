@@ -17,6 +17,8 @@ const ThemeProvider = (props) => {
 	useEffect(() => {
 		const lsDark = JSON.parse(localStorage.getItem('dark'));
 
+		console.log(lsDark, JSON.parse(localStorage.getItem('dark')));
+
 		if (lsDark) {
 			setDarkState(lsDark);
 		} else if (supportsDarkMode()) {
@@ -25,8 +27,10 @@ const ThemeProvider = (props) => {
 	}, [props]);
 
 	const toggleDark = () => {
-		setDarkState(!darkState);
-		localStorage.setItem('dark', JSON.stringify(darkState));
+		const state = !darkState;
+
+		setDarkState(state);
+		localStorage.setItem('dark', JSON.stringify(state));
 	};
 
 	return <ThemeContext.Provider value={{ dark: darkState, toggleDark }}>{props.children}</ThemeContext.Provider>;

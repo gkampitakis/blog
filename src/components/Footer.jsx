@@ -17,7 +17,7 @@ export default (props) => {
 			<div className="container">
 				<div className="avatar">
 					Created by:
-					<a href="https://www.instagram.com/g.kampitakis/">
+					<a href="https://www.instagram.com/g.kampitakis/" rel="noopener noreferrer" target="_blank">
 						<img src={avatar} alt="Me" />
 					</a>
 				</div>

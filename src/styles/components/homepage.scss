@@ -1,0 +1,41 @@
+.homepage {
+	//TODO: implement small screen css
+}
+
+@include respond-to('x-small') {
+	.homepage {
+		display: flex;
+		width: 100%;
+		flex-direction: row;
+
+		.introduction {
+			display: flex;
+			width: 100%;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.message {
+			display: flex;
+			width: 100%;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		.avatar {
+			display: flex;
+			text-align: center;
+			flex-direction: column;
+
+			img {
+				margin-bottom: 1.2rem;
+				margin-left: 1.2rem;
+				border: 2px solid $border-color;
+				border-radius: 50%;
+				width: 180px;
+				height: 180px;
+			}
+		}
+	}
+}

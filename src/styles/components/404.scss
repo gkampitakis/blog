@@ -49,23 +49,5 @@
 @include respond-to('x-small') {
 	.pageNotFound {
 		margin-bottom: 140px;
-		// .statusCode {
-		// 	font-family: 'Courier New', Courier, monospace;
-		// 	font-size: 145px;
-		// 	font-weight: 700;
-		// 	z-index: -5;
-		// }
-
-		// .logo {
-		// 	img {
-		// 		height: 125px;
-		// 	}
-		// }
-
-		// .description {
-		// }
-
-		// .title {
-		// }
 	}
 }
