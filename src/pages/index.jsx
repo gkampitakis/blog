@@ -6,12 +6,30 @@ import config from '../../data/SiteConfig';
 import SEO from '../components/SEO';
 import avatar from '../images/avatar.jpg';
 import GitHubButton from 'react-github-btn';
+import { Link } from 'gatsby';
+import { isMobile } from 'react-device-detect';
+import js from '../images/js.png';
 
 export default (props) => {
 	const { data } = props,
 		github = config.socialLinks[0].url;
 
 	console.log(data);
+
+	let topArticles = [
+		{
+			slug: '/',
+			title: 'A big long title 1',
+			thumbnail: 'js'
+		},
+		{ slug: '/', title: 'A big long title 2', thumbnail: 'js' },
+		{ slug: '/', title: 'A big long title 3', thumbnail: 'js' },
+		{ slug: '/', title: 'A big long title 4', thumbnail: 'js' },
+		{ slug: '/', title: 'A big long title 5', thumbnail: 'js' },
+		{ slug: '/', title: 'A big long title 6', thumbnail: 'js' }
+	];
+
+	if (isMobile) topArticles = topArticles.slice(0, 4); //dev
 
 	return (
 		<Layout>
@@ -32,17 +50,33 @@ export default (props) => {
 					</div>
 					<div className="avatar">
 						<img src={avatar} alt="Avatar" />
-						<GitHubButton href={github} data-size="large" data-show-count="true">
+						<GitHubButton href={github} data-size="large">
 							gkampitakis
 						</GitHubButton>
 					</div>
 				</div>
 			</div>
+			<div className="main container">
+				<h2>Top Posts {emoji('🏆')}</h2>
+				<section className="topArticles">
+					{/* TODO: here fix the sizes on both screens*/}
+					{/* TODO: outsource all colors to themes */}
+					{topArticles.map(({ title, slug }) => (
+						<Link key={title} to={slug}>
+							<img src={js} alt="" />
+							<h3>{title}</h3>
+						</Link>
+					))}
+				</section>
+				<Link className="viewAll" to="/categories/top">
+					View All
+				</Link>
+			</div>
 		</Layout>
 	);
 };
 
-// //TODO: Posts
+// //TODO: Posts and use different limiter
 // export const pageQuery = graphql`
 // 	query IndexQuery {
 // 		latest: allMarkdownRemark(limit: 5, sort: { fields: [fields___date], order: DESC }) {

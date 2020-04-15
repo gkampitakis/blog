@@ -1,10 +1,13 @@
 #main-content {
-	display: flex;
 	margin: auto;
 	margin-top: 55px;
 	padding: 40px 0 0;
 	min-height: calc(100vh - 190px);
 	max-width: $width;
+}
+
+.bottomMargin {
+	margin-bottom: 55px !important;
 }
 
 @include respond-to('x-small') {

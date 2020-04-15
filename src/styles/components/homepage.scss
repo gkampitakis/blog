@@ -1,41 +1,131 @@
 .homepage {
-	//TODO: implement small screen css
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+
+	.introduction {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.message {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		flex-direction: column;
+		h1 {
+			margin: 10px 0;
+			font-size: $h1-font-size-mobile;
+			text-align: center;
+		}
+	}
+
+	.avatar {
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+
+		img {
+			margin: 15px 0;
+			border: 2px solid $border-color;
+			border-radius: 50%;
+			width: 150px;
+			height: 150px;
+		}
+	}
 }
 
 @include respond-to('x-small') {
 	.homepage {
-		display: flex;
-		width: 100%;
-		flex-direction: row;
-
 		.introduction {
-			display: flex;
-			width: 100%;
 			flex-direction: row;
-			align-items: center;
-			justify-content: space-between;
 		}
 
 		.message {
-			display: flex;
-			width: 100%;
-			justify-content: center;
-			flex-direction: column;
+			h1 {
+				margin-block-start: 0.67em;
+				margin-block-end: 0.67em;
+				font-size: $h1-font-size;
+			}
 		}
 
 		.avatar {
-			display: flex;
-			text-align: center;
-			flex-direction: column;
+			margin-bottom: 1.2rem;
+			margin-left: 1.2rem;
 
 			img {
-				margin-bottom: 1.2rem;
-				margin-left: 1.2rem;
-				border: 2px solid $border-color;
-				border-radius: 50%;
 				width: 180px;
 				height: 180px;
 			}
 		}
+	}
+}
+
+.main {
+	margin-top: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	h2 {
+		margin: 10px 0;
+		font-size: $h2-font-size-mobile;
+	}
+
+	.viewAll {
+		background: white;
+		padding: 0.5rem 1rem;
+		border-radius: 7px;
+		margin: 0.5rem 0;
+		font-weight: 600;
+		font-size: 0.8rem;
+	}
+
+	.topArticles {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		> a {
+			z-index: 2;
+			transition: all 0.2s ease;
+			display: block;
+			padding: 1rem 1.5rem;
+			border-radius: $border-radius;
+			box-shadow: 0.2rem 0.25rem 0.75rem 0 rgba(0, 0, 0, 0.1);
+			margin: 0.5rem;
+			&:hover {
+				transform: translateY(-2px);
+				box-shadow: 0.5rem 1.25rem 2rem 0 rgba(0, 0, 0, 0.2);
+			}
+			img {
+				display: block;
+				margin: auto;
+				width: 50px;
+				max-width: 50px;
+				max-height: 50px;
+				height: auto;
+			}
+			h3 {
+				margin: 0.5rem auto 0;
+				text-align: center;
+				font-size: 1.1rem;
+			}
+		}
+	}
+}
+
+@include respond-to('x-small') {
+	.main {
+		margin-top: 3rem;
+
+		h2 {
+			margin-block-start: 0.67em;
+			margin-block-end: 0.67em;
+			font-size: $h2-font-size;
+		}
+	}
+
+	.topArticles {
 	}
 }

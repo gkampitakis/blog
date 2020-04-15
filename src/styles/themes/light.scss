@@ -33,6 +33,14 @@ $font-color: #454545;
 		background: white;
 		transition: background-color 0.5s ease;
 	}
+
+	.main {
+		.topArticles {
+			> a {
+				background: lighten($background, 10);
+			}
+		}
+	}
 }
 
 body.light::-webkit-scrollbar-thumb {

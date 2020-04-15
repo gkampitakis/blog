@@ -40,6 +40,20 @@ $font-color: #b3b9c5;
 		border-color: $background;
 		transition: background-color 0.5s ease;
 	}
+
+	h1,
+	h2,
+	h3 {
+		color: #eee;
+	}
+
+	.main {
+		.topArticles {
+			> a {
+				background: lighten($background, 10);
+			}
+		}
+	}
 }
 
 body.dark::-webkit-scrollbar-thumb {
