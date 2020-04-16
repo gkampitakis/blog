@@ -125,3 +125,39 @@
 		}
 	}
 }
+
+.secondary {
+	display: flex;
+	flex-direction: column;
+
+	.latestPosts {
+		width: 100%;
+		> a {
+			margin: auto;
+			width: 90%;
+			flex-direction: row;
+			display: flex;
+			border: 1px solid black;
+			align-items: center;
+			border-radius: 6px;
+			justify-content: space-between;
+
+			h3 {
+				flex: 1;
+			}
+		}
+
+		img {
+			width: 50px;
+			height: 50px; //TODO:
+		}
+
+		.bookmark {
+			img {
+				width: 1.5rem !important;
+				height: 1.5rem !important;
+				margin: 0.5rem !important;
+			}
+		}
+	}
+}

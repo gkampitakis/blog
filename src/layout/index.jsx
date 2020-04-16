@@ -12,7 +12,7 @@ export default (props) => {
 	const { children } = props,
 		{ dark } = useContext(ThemeContext);
 
-	console.log(config.consoleMessage); //TODO: remove
+	console.log(config.consoleMessage);
 
 	return (
 		<>

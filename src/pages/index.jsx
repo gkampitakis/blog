@@ -32,6 +32,11 @@ export default (props) => {
 
 	if (isMobile) topArticles = topArticles.slice(0, 4); //dev
 
+	const setBookmark = (event, title) => {
+		event.preventDefault();
+		console.log('Mock Up bookmark');
+	};
+
 	return (
 		<Layout>
 			<Helmet title={`${config.siteTitle} – Full Stack Software Developer`} />
@@ -70,6 +75,23 @@ export default (props) => {
 				<Chip to="/test" type="viewAll">
 					View All
 				</Chip>
+			</div>
+			<div className="secondary container">
+				<h2>Latest Posts {emoji('📰')}</h2>
+				<Chip to="/test" type="viewAll">
+					View All
+				</Chip>
+				<section className="latestPosts">
+					{topArticles.map(({ title, slug }) => (
+						<Link key={title} to={slug}>
+							<img src={js} alt="" />
+							<h3>{title}</h3>
+							<div className="bookmark" role="button" onClick={(e) => setBookmark(e, title)}>
+								{emoji('🔖')}
+							</div>
+						</Link>
+					))}
+				</section>
 			</div>
 		</Layout>
 	);
