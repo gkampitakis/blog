@@ -22,11 +22,11 @@ export default (props) => {
 			title: 'A big long title 1',
 			thumbnail: 'js'
 		},
-		{ slug: '/', title: 'A big long title 2', thumbnail: 'js' },
-		{ slug: '/', title: 'A big long title 3', thumbnail: 'js' },
-		{ slug: '/', title: 'A big long title 4', thumbnail: 'js' },
+		{ slug: '/', title: 'Publish to github registry 1111111111111111 dasdadasda', thumbnail: 'js' },
+		{ slug: '/', title: 'Publish to github registry plus something', thumbnail: 'js' },
+		{ slug: '/', title: 'Publish to github registry plus', thumbnail: 'js' },
 		{ slug: '/', title: 'A big long title 5', thumbnail: 'js' },
-		{ slug: '/', title: 'A big long title 6', thumbnail: 'js' }
+		{ slug: '/', title: 'smaller title', thumbnail: 'js' }
 	];
 
 	if (isMobile) topArticles = topArticles.slice(0, 4); //dev
@@ -59,8 +59,6 @@ export default (props) => {
 			<div className="main container">
 				<h2>Top Posts {emoji('🏆')}</h2>
 				<section className="topArticles">
-					{/* TODO: here fix the sizes on both screens*/}
-					{/* TODO: outsource all colors to themes */}
 					{topArticles.map(({ title, slug }) => (
 						<Link key={title} to={slug}>
 							<img src={js} alt="" />
@@ -70,6 +68,7 @@ export default (props) => {
 				</section>
 				<Link className="viewAll" to="/categories/top">
 					View All
+					{/* TODO: */}
 				</Link>
 			</div>
 		</Layout>
