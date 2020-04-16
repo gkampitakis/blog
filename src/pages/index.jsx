@@ -9,6 +9,7 @@ import GitHubButton from 'react-github-btn';
 import { Link } from 'gatsby';
 import { isMobile } from 'react-device-detect';
 import js from '../images/js.png';
+import Chip from '../components/Chip';
 
 export default (props) => {
 	const { data } = props,
@@ -66,10 +67,9 @@ export default (props) => {
 						</Link>
 					))}
 				</section>
-				<Link className="viewAll" to="/categories/top">
+				<Chip to="/test" type="viewAll">
 					View All
-					{/* TODO: */}
-				</Link>
+				</Chip>
 			</div>
 		</Layout>
 	);

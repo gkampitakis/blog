@@ -1,0 +1,12 @@
+.chip {
+	padding: 0.5rem 1rem;
+	border-radius: 7px;
+	margin: 0.5rem 0;
+	font-weight: 600;
+	font-size: 0.8rem;
+}
+
+@include respond-to('x-small') {
+	.chip {
+	}
+}

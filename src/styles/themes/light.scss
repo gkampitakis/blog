@@ -50,6 +50,16 @@ $font-color: #454545;
 			}
 		}
 	}
+
+	.chip {
+		&.viewAll {
+			background: white;
+
+			&:hover {
+				background: darken(white, 10);
+			}
+		}
+	}
 }
 
 body.light::-webkit-scrollbar-thumb {
