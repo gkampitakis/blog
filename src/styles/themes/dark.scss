@@ -1,7 +1,7 @@
 $background: #202020;
 $foreground: #b3b9c5;
 $accent: #303030;
-$dark-border: darken($background, 3%);
+$border-color: darken($background, 3%);
 $dark-primary: $tag;
 $font-color: #b3b9c5;
 
@@ -35,6 +35,29 @@ $font-color: #b3b9c5;
 		}
 	}
 
+	.latestPosts {
+		> a {
+			border-bottom: 0.2px solid $border-color;
+
+			.wrapper {
+				border-bottom: 1px solid lighten($background, 8);
+				h4 {
+					color: #9fa3a9;
+				}
+			}
+
+			&:hover {
+				background: lighten($background, 8);
+
+				.wrapper {
+					h4 {
+						color: #eee;
+					}
+				}
+			}
+		}
+	}
+
 	.footer {
 		background: darken($background, 1);
 		border-color: $background;
@@ -43,15 +66,22 @@ $font-color: #b3b9c5;
 
 	h1,
 	h2,
-	h3 {
+	h3,
+	h4 {
 		color: #eee;
 	}
 
 	.main {
 		.topArticles {
 			> a {
+				h3 {
+					color: #9fa3a9;
+				}
 				background: lighten($background, 4);
 				&:hover {
+					h3 {
+						color: #eee;
+					}
 					background: lighten($background, 8);
 				}
 			}

@@ -1,5 +1,6 @@
 $background: #f0f0f0;
 $font-color: #454545;
+$border-color: #ccc;
 
 .light {
 	background: $background;
@@ -36,16 +37,44 @@ $font-color: #454545;
 
 	h1,
 	h2,
-	h3 {
-		color: $font-color;
+	h3,
+	h4 {
+		color: #111;
 	}
 
 	.main {
 		.topArticles {
 			> a {
 				background: lighten($background, 4);
+				h3 {
+					color: $font-color;
+				}
 				&:hover {
 					background: lighten($background, 8);
+					h3 {
+						color: #111;
+					}
+				}
+			}
+		}
+	}
+
+	.latestPosts {
+		> a {
+			border-bottom: 0.2px solid $border-color;
+			.wrapper {
+				border-bottom: 1px solid darken($background, 4);
+				h4 {
+					color: $font-color;
+				}
+			}
+			&:hover {
+				background: darken($background, 4);
+
+				.wrapper {
+					h4 {
+						color: #111;
+					}
 				}
 			}
 		}

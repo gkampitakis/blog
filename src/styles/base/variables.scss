@@ -27,23 +27,28 @@ $h1-font-size: 2rem;
 $h2-font-size-mobile: 1.3rem;
 $h2-font-size: 1.5rem;
 
+// Headings
+$heading-font-color: #111;
+$heading-font-weight: 500;
+$heading-font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+$heading-line-height: 1.3;
+
 /**Colors*/
 $link-color: #009b64ba;
 
 /* Borders */
 $border-width: 2px;
 $border-style: solid;
-$border-color: #ccc;
 $border-radius: 6px;
-$borders: $border-width $border-style $border-color;
-$box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16);
+// $borders: $border-width $border-style $border-color;
+// $box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16);
 
 /**Code*/
 $code-color: $font-color;
 $code-size: 14px;
 $code-family: Menlo, monospace;
 $code-background: transparent;
-$code-borders: $borders;
+// $code-borders: $borders;
 
 $code-family: Menlo, 'Roboto Mono', Courier New, monospace;
 

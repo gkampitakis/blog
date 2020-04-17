@@ -62,6 +62,7 @@ export default (props) => {
 					</div>
 				</div>
 			</div>
+			{/* TODO: outsource this to a component and make it reusable */}
 			<div className="main container">
 				<h2>Top Posts {emoji('🏆')}</h2>
 				<section className="topArticles">
@@ -77,22 +78,27 @@ export default (props) => {
 				</Chip>
 			</div>
 			<div className="secondary container">
-				<h2>Latest Posts {emoji('📰')}</h2>
-				<Chip to="/test" type="viewAll">
-					View All
-				</Chip>
+				<div className="title">
+					<h2>Latest Posts {emoji('📰')}</h2>
+					<Chip to="/test" type="viewAll">
+						View All
+					</Chip>
+				</div>
 				<section className="latestPosts">
 					{topArticles.map(({ title, slug }) => (
 						<Link key={title} to={slug}>
-							<img src={js} alt="" />
-							<h3>{title}</h3>
-							<div className="bookmark" role="button" onClick={(e) => setBookmark(e, title)}>
-								{emoji('🔖')}
+							<div className="wrapper">
+								<img src={js} alt="" />
+								<h4>{title}</h4>
+								<div className="bookmark" role="button" onClick={(e) => setBookmark(e, title)}>
+									{emoji('🔖')}
+								</div>
 							</div>
 						</Link>
 					))}
 				</section>
 			</div>
+			{/* TODO: personal projects section */}
 		</Layout>
 	);
 };

@@ -6,7 +6,6 @@ import ThemeContext from '../context/ThemeContext';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import favicon from '../images/favicon.png';
-import { isMobile } from 'react-device-detect';
 
 export default (props) => {
 	const { children } = props,
@@ -22,9 +21,7 @@ export default (props) => {
 				<html lang="en" />
 			</Helmet>
 			<Navigation menuLinks={config.menuLinks} />
-			<main id="main-content" className={`${isMobile ? 'bottomMargin' : ''}`}>
-				{children}
-			</main>
+			<main id="main-content">{children}</main>
 			<Footer config={config} />
 		</>
 	);
