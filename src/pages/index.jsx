@@ -6,7 +6,7 @@ import config from '../../data/SiteConfig';
 import SEO from '../components/SEO';
 import avatar from '../images/avatar.jpg';
 import GitHubButton from 'react-github-btn';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { isMobile } from 'react-device-detect';
 import js from '../images/js.png';
 import Chip from '../components/Chip';
@@ -103,62 +103,60 @@ export default (props) => {
 	);
 };
 
-// //TODO: Posts and use different limiter
-// export const pageQuery = graphql`
-// 	query IndexQuery {
-// 		latest: allMarkdownRemark(limit: 5, sort: { fields: [fields___date], order: DESC }) {
-// 			edges {
-// 				node {
-// 					fields {
-// 						slug
-// 						date
-// 					}
-// 					excerpt
-// 					timeToRead
-// 					frontmatter {
-// 						title
-// 						tags
-// 						categories
-// 						# thumbnail {
-// 						# 	childImageSharp {
-// 						# 		fixed(width: 150, height: 150) {
-// 						# 			...GatsbyImageSharpFixed
-// 						# 		}
-// 						# 	}
-// 						# }
-// 						date
-// 					}
-// 				}
-// 			}
-// 		}
-// 		popular: allMarkdownRemark(
-// 			limit: 9
-// 			sort: { fields: [fields___date], order: DESC }
-// 			filter: { frontmatter: { categories: { eq: "Popular" } } }
-// 		) {
-// 			edges {
-// 				node {
-// 					fields {
-// 						slug
-// 						date
-// 					}
-// 					excerpt
-// 					timeToRead
-// 					frontmatter {
-// 						title
-// 						tags
-// 						categories
-// 						# thumbnail {
-// 						# 	childImageSharp {
-// 						# 		fixed(width: 150, height: 150) {
-// 						# 			...GatsbyImageSharpFixed
-// 						# 		}
-// 						# 	}
-// 						# }
-// 						date
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// `;
+//TODO: Posts and use different limiter
+export const pageQuery = graphql`
+	query IndexQuery {
+		latest: allMarkdownRemark(limit: 6, sort: { fields: [fields___date], order: DESC }) {
+			edges {
+				node {
+					fields {
+						slug
+						date
+					}
+					excerpt
+					frontmatter {
+						title
+						tags
+						category
+						thumbnail {
+							childImageSharp {
+								fixed(width: 150, height: 150) {
+									...GatsbyImageSharpFixed
+								}
+							}
+						}
+						date
+					}
+				}
+			}
+		}
+		popular: allMarkdownRemark(
+			limit: 6
+			sort: { fields: [fields___date], order: DESC }
+			filter: { frontmatter: { tags: { in: "popular" } } }
+		) {
+			edges {
+				node {
+					fields {
+						slug
+						date
+					}
+					excerpt
+					frontmatter {
+						title
+						tags
+						category
+						thumbnail {
+							childImageSharp {
+								fixed(width: 150, height: 150) {
+									...GatsbyImageSharpFixed
+								}
+							}
+						}
+						date
+					}
+				}
+			}
+		}
+	}
+`;

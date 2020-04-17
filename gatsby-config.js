@@ -8,6 +8,8 @@ module.exports = {
 		siteUrl: urljoin(config.siteUrl, config.pathPrefix)
 	},
 	plugins: [
+		'gatsby-plugin-sharp',
+		`gatsby-transformer-sharp`,
 		'gatsby-plugin-sass',
 		'gatsby-plugin-react-helmet',
 		{
@@ -58,8 +60,6 @@ module.exports = {
 				color: config.themeColor
 			}
 		},
-		'gatsby-plugin-sharp',
-		'gatsby-transformer-sharp',
 		'gatsby-plugin-catch-links',
 		'gatsby-plugin-twitter',
 		'gatsby-plugin-sitemap',

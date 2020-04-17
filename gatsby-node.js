@@ -1,9 +1,12 @@
 /* eslint "no-console": "off" */
-
 const path = require('path');
 const _ = require('lodash');
 const moment = require('moment');
 const siteConfig = require('./data/SiteConfig');
+const sharp = require('sharp');
+
+sharp.simd(false);
+sharp.cache(false);
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
 	const { createNodeField } = actions;
@@ -39,6 +42,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 };
 
 exports.createPages = async ({ graphql, actions }) => {
+	//FIXME: fields you need
 	const { createPage } = actions;
 	const postPage = path.resolve('src/templates/post.jsx');
 	const tagPage = path.resolve('src/templates/tag.jsx');
@@ -89,7 +93,8 @@ exports.createPages = async ({ graphql, actions }) => {
 	});
 
 	// Paging
-	const { postsPerPage } = siteConfig;
+	// const { postsPerPage } = siteConfig;
+	const postsPerPage = 4; //TODO: investigate this
 	if (postsPerPage) {
 		const pageCount = Math.ceil(postsEdges.length / postsPerPage);
 

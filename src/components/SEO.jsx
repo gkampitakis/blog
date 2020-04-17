@@ -12,7 +12,7 @@ export default (props) => {
 		const postMeta = postNode.frontmatter;
 		({ title } = postMeta);
 		description = postMeta.description ? postMeta.description : postNode.excerpt;
-		image = postMeta.cover;
+		image = postMeta.cover; //FIXME:
 		postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
 	} else {
 		title = config.siteTitle;
