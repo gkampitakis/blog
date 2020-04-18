@@ -13,17 +13,11 @@ module.exports = {
 		'gatsby-plugin-sass',
 		'gatsby-plugin-react-helmet',
 		{
-			resolve: 'gatsby-source-filesystem',
+			resolve: 'gatsby-source-strapi',
 			options: {
-				name: 'assets',
-				path: `${__dirname}/content/`
-			}
-		},
-		{
-			resolve: 'gatsby-source-filesystem',
-			options: {
-				name: 'posts',
-				path: `${__dirname}/content/`
+				apiURL: 'http://localhost:1337', //TODO: connect and add variables here
+				contentTypes: ['post'],
+				queryLimit: 500
 			}
 		},
 		{

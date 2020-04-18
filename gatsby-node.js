@@ -8,83 +8,45 @@ const sharp = require('sharp');
 sharp.simd(false);
 sharp.cache(false);
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-	const { createNodeField } = actions;
-	let slug;
-	if (node.internal.type === 'MarkdownRemark') {
-		const fileNode = getNode(node.parent);
-		const parsedFilePath = path.parse(fileNode.relativePath);
-		if (
-			Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-			Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
-		) {
-			slug = `/${_.kebabCase(node.frontmatter.title)}`;
-		} else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
-			slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
-		} else if (parsedFilePath.dir === '') {
-			slug = `/${parsedFilePath.name}/`;
-		} else {
-			slug = `/${parsedFilePath.dir}/`;
-		}
-
-		if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
-			if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug'))
-				slug = `/${_.kebabCase(node.frontmatter.slug)}`;
-			if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
-				const date = moment(node.frontmatter.date, siteConfig.dateFromFormat);
-				if (!date.isValid) console.warn(`WARNING: Invalid date.`, node.frontmatter);
-
-				createNodeField({ node, name: 'date', value: date.toISOString() });
-			}
-		}
-		createNodeField({ node, name: 'slug', value: slug });
-	}
-};
-
 exports.createPages = async ({ graphql, actions }) => {
-	//FIXME: fields you need
 	const { createPage } = actions;
 	const postPage = path.resolve('src/templates/post.jsx');
 	const tagPage = path.resolve('src/templates/tag.jsx');
 	const categoryPage = path.resolve('src/templates/category.jsx');
-	const listingPage = path.resolve('./src/templates/listing.jsx');
+	const listingPage = path.resolve('./src/templates/listing.jsx'); //TODO: this will change
 
 	// Get a full list of markdown posts
-	const markdownQueryResult = await graphql(`
+	const queryResult = await graphql(`
 		{
-			allMarkdownRemark {
+			allStrapiPost {
 				edges {
 					node {
-						fields {
-							slug
-						}
-						frontmatter {
-							title
-							tags
-							category
-							date
-						}
+						slug
+						title
+						tags
+						category
+						createdAt
 					}
 				}
 			}
 		}
 	`);
 
-	if (markdownQueryResult.errors) {
-		console.error(markdownQueryResult.errors);
-		throw markdownQueryResult.errors;
+	if (queryResult.errors) {
+		console.error(queryResult.errors);
+		throw queryResult.errors;
 	}
 
 	const tagSet = new Set();
 	const categorySet = new Set();
 
-	const postsEdges = markdownQueryResult.data.allMarkdownRemark.edges;
+	const postsEdges = queryResult.data.allStrapiPost.edges;
 
 	// Sort posts
 	postsEdges.sort((postA, postB) => {
-		const dateA = moment(postA.node.frontmatter.date, siteConfig.dateFromFormat);
+		const dateA = moment(postA.node.date, siteConfig.dateFromFormat);
 
-		const dateB = moment(postB.node.frontmatter.date, siteConfig.dateFromFormat);
+		const dateB = moment(postB.node.date, siteConfig.dateFromFormat);
 
 		if (dateA.isBefore(dateB)) return 1;
 		if (dateB.isBefore(dateA)) return -1;
@@ -115,15 +77,15 @@ exports.createPages = async ({ graphql, actions }) => {
 	// Post page creating
 	postsEdges.forEach((edge, index) => {
 		// Generate a list of tags
-		if (edge.node.frontmatter.tags) {
-			edge.node.frontmatter.tags.forEach((tag) => {
+		if (edge.node.tags) {
+			edge.node.tags.forEach((tag) => {
 				tagSet.add(tag);
 			});
 		}
 
 		// Generate a list of categories
-		if (edge.node.frontmatter.category) {
-			categorySet.add(edge.node.frontmatter.category);
+		if (edge.node.category) {
+			categorySet.add(edge.node.category);
 		}
 
 		// Create post pages
@@ -133,14 +95,14 @@ exports.createPages = async ({ graphql, actions }) => {
 		const prevEdge = postsEdges[prevID];
 
 		createPage({
-			path: edge.node.fields.slug,
+			path: edge.node.slug,
 			component: postPage,
 			context: {
-				slug: edge.node.fields.slug,
-				nexttitle: nextEdge.node.frontmatter.title,
-				nextslug: nextEdge.node.fields.slug,
-				prevtitle: prevEdge.node.frontmatter.title,
-				prevslug: prevEdge.node.fields.slug
+				slug: edge.node.slug,
+				nexttitle: nextEdge.node.title,
+				nextslug: nextEdge.node.slug,
+				prevtitle: prevEdge.node.title,
+				prevslug: prevEdge.node.slug
 			}
 		});
 	});

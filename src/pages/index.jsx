@@ -10,12 +10,11 @@ import { Link, graphql } from 'gatsby';
 import { isMobile } from 'react-device-detect';
 import js from '../images/js.png';
 import Chip from '../components/Chip';
+import Img from 'gatsby-image';
 
 export default (props) => {
-	const { data } = props,
-		github = config.socialLinks[0].url;
-
-	console.log(data);
+	let { topPosts, latestPosts } = props.data;
+	const github = config.socialLinks[0].url;
 
 	let topArticles = [
 		{
@@ -30,7 +29,11 @@ export default (props) => {
 		{ slug: '/', title: 'smaller title', thumbnail: 'js' }
 	];
 
-	if (isMobile) topArticles = topArticles.slice(0, 4); //dev
+	if (isMobile) {
+		topPosts = topPosts.slice(0, 4);
+		latestPosts = latestPosts.slice(0, 4);
+		topArticles = topArticles.slice(0, 4);
+	}
 
 	const setBookmark = (event, title) => {
 		event.preventDefault();
@@ -42,6 +45,7 @@ export default (props) => {
 			<Helmet title={`${config.siteTitle} – Full Stack Software Developer`} />
 			<SEO />
 			<div className="homepage container">
+				<Img fixed={topPosts.edges[0].node.thumbnail.childImageSharp.fixed} />
 				<div className="introduction">
 					<div className="message">
 						<h1>
@@ -103,60 +107,50 @@ export default (props) => {
 	);
 };
 
-//TODO: Posts and use different limiter
 export const pageQuery = graphql`
 	query IndexQuery {
-		latest: allMarkdownRemark(limit: 6, sort: { fields: [fields___date], order: DESC }) {
-			edges {
-				node {
-					fields {
-						slug
-						date
-					}
-					excerpt
-					frontmatter {
-						title
-						tags
-						category
-						thumbnail {
-							childImageSharp {
-								fixed(width: 150, height: 150) {
-									...GatsbyImageSharpFixed
-								}
-							}
-						}
-						date
-					}
-				}
-			}
-		}
-		popular: allMarkdownRemark(
+		topPosts: allStrapiPost(
 			limit: 6
-			sort: { fields: [fields___date], order: DESC }
-			filter: { frontmatter: { tags: { in: "popular" } } }
+			sort: { fields: [createdAt], order: DESC }
+			filter: { tags: { in: "popular" } }
 		) {
 			edges {
 				node {
-					fields {
-						slug
-						date
-					}
-					excerpt
-					frontmatter {
-						title
-						tags
-						category
-						thumbnail {
-							childImageSharp {
-								fixed(width: 150, height: 150) {
-									...GatsbyImageSharpFixed
-								}
+					id
+					thumbnail {
+						childImageSharp {
+							fixed(width: 200, height: 125) {
+								...GatsbyImageSharpFixed
 							}
 						}
-						date
 					}
+					title
+					content
+					createdAt
+				}
+			}
+		}
+		latestPosts: allStrapiPost(
+			limit: 6
+			sort: { fields: [createdAt], order: DESC }
+			filter: { tags: { in: "new" } }
+		) {
+			edges {
+				node {
+					id
+					thumbnail {
+						childImageSharp {
+							fixed(width: 200, height: 125) {
+								...GatsbyImageSharpFixed
+							}
+						}
+					}
+					title
+					content
+					createdAt
 				}
 			}
 		}
 	}
 `;
+// TODO: fix image sizes on queries
