@@ -10,6 +10,7 @@ import { graphql } from 'gatsby';
 import { isMobile } from 'react-device-detect';
 import LatestPosts from '../components/home/LatestPosts';
 import TopPosts from '../components/home/TopPosts';
+import ProjectsList from '../components/home/Projects';
 
 export default (props) => {
 	const { latest, popular } = props.data,
@@ -48,9 +49,9 @@ export default (props) => {
 					</div>
 				</div>
 			</div>
-			<LatestPosts posts={topPosts} />
 			<TopPosts posts={latestPosts} />
-			{/* TODO: personal projects section */}
+			<LatestPosts posts={topPosts} />
+			<ProjectsList />
 		</Layout>
 	);
 };

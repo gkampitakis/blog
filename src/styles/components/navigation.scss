@@ -99,6 +99,8 @@
 @include respond-to('x-small') {
 	.nav {
 		&.scroll {
+			opacity: 0.85;
+
 			.nav-container {
 				height: 60px;
 			}
