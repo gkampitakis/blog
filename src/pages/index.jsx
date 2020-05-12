@@ -6,10 +6,10 @@ import config from '../../data/SiteConfig';
 import SEO from '../components/SEO';
 import avatar from '../images/avatar.jpg';
 import GitHubButton from 'react-github-btn';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import { isMobile } from 'react-device-detect';
-import Chip from '../components/Chip';
-import Img from 'gatsby-image';
+import LatestPosts from '../components/home/LatestPosts';
+import TopPosts from '../components/home/TopPosts';
 
 export default (props) => {
 	const { latest, popular } = props.data,
@@ -18,16 +18,10 @@ export default (props) => {
 	let topPosts = popular.edges.map(({ node }) => node),
 		latestPosts = latest.edges.map(({ node }) => node);
 
-
 	if (isMobile) {
 		topPosts = topPosts.slice(0, 4);
 		latestPosts = latestPosts.slice(0, 4);
 	}
-
-	const setBookmark = (event, title) => {
-		event.preventDefault();
-		console.log('Mock Up bookmark');
-	};
 
 	return (
 		<Layout>
@@ -54,46 +48,8 @@ export default (props) => {
 					</div>
 				</div>
 			</div>
-			{/* TODO: outsource this to a component and make it reusable */}
-			<div className="main container">
-				<h2>Top Posts {emoji('🏆')}</h2>
-				<section className="topArticles">
-					{topPosts.map(({ fields, frontmatter }) => (
-						<Link key={frontmatter.title} to={fields.slug}>
-							<Img fixed={frontmatter.thumbnail.childImageSharp.fixed} />
-							<h3>{frontmatter.title}</h3>
-						</Link>
-					))}
-				</section>
-				<Chip to="/test" type="viewAll">
-					View All
-				</Chip>
-			</div>
-			<div className="secondary container">
-				<div className="title">
-					<h2>Latest Posts {emoji('📰')}</h2>
-					<Chip to="/test" type="viewAll">
-						View All
-					</Chip>
-				</div>
-				<section className="latestPosts">
-					{latestPosts.map(({ fields, frontmatter }) => (
-						<Link key={frontmatter.title} to={fields.slug}>
-							<div className="wrapper">
-								<Img fixed={frontmatter.thumbnail.childImageSharp.fixed} />
-								<h4>{frontmatter.title}</h4>
-								<div
-									className="bookmark"
-									role="button"
-									onClick={(e) => setBookmark(e, frontmatter.title)}
-								>
-									{emoji('🔖')}
-								</div>
-							</div>
-						</Link>
-					))}
-				</section>
-			</div>
+			<LatestPosts posts={topPosts} />
+			<TopPosts posts={latestPosts} />
 			{/* TODO: personal projects section */}
 		</Layout>
 	);
@@ -158,4 +114,5 @@ export const pageQuery = graphql`
 
 //TODO: clear code
 //Update readme file
+// setup ghpages module
 //Clear css and scaffolding to be more clear
