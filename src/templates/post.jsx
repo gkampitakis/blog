@@ -5,8 +5,10 @@ import Layout from '../layout';
 import UserInfo from '../components/UserInfo';
 import PostTags from '../components/PostTags';
 import SEO from '../components/SEO';
-import Footer from '../components/Footer';
 import config from '../../data/SiteConfig';
+
+//TODO:work on designs here, verify all data are passed correctly
+//TODO: review SEO and helmet
 
 export default (props) => {
 	const { data, pageContext } = props,
@@ -32,7 +34,6 @@ export default (props) => {
 						<PostTags tags={post.tags} />
 					</div>
 					<UserInfo config={config} />
-					<Footer config={config} />
 				</div>
 			</div>
 		</Layout>
@@ -48,7 +49,13 @@ export const pageQuery = graphql`
 			excerpt
 			frontmatter {
 				title
-				# cover
+				thumbnail {
+					childImageSharp {
+						fixed(width: 150, height: 150) {
+							...GatsbyImageSharpFixed
+						}
+					}
+				}
 				date
 				category
 				tags

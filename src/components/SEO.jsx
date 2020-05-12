@@ -4,6 +4,8 @@ import urljoin from 'url-join';
 import moment from 'moment';
 import config from '../../data/SiteConfig';
 
+//TODO: verify all needed values here are passed correctly
+
 export default (props) => {
 	const { postNode, postPath, postSEO } = props;
 	let title, description, image, postURL;
@@ -12,7 +14,7 @@ export default (props) => {
 		const postMeta = postNode.frontmatter;
 		({ title } = postMeta);
 		description = postMeta.description ? postMeta.description : postNode.excerpt;
-		image = postMeta.cover; //FIXME:
+		image = postMeta.thumbnail ? postMeta.thumbnail.childImageSharp.fixed.src : '';
 		postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
 	} else {
 		title = config.siteTitle;

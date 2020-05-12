@@ -8,29 +8,21 @@ import avatar from '../images/avatar.jpg';
 import GitHubButton from 'react-github-btn';
 import { Link, graphql } from 'gatsby';
 import { isMobile } from 'react-device-detect';
-import js from '../images/js.png';
 import Chip from '../components/Chip';
+import Img from 'gatsby-image';
 
 export default (props) => {
-	const { data } = props,
+	const { latest, popular } = props.data,
 		github = config.socialLinks[0].url;
 
-	console.log(data);
+	let topPosts = popular.edges.map(({ node }) => node),
+		latestPosts = latest.edges.map(({ node }) => node);
 
-	let topArticles = [
-		{
-			slug: '/',
-			title: 'A big long title 1',
-			thumbnail: 'js'
-		},
-		{ slug: '/', title: 'Publish to github registry 1111111111111111 dasdadasda', thumbnail: 'js' },
-		{ slug: '/', title: 'Publish to github registry plus something', thumbnail: 'js' },
-		{ slug: '/', title: 'Publish to github registry plus', thumbnail: 'js' },
-		{ slug: '/', title: 'A big long title 5', thumbnail: 'js' },
-		{ slug: '/', title: 'smaller title', thumbnail: 'js' }
-	];
 
-	if (isMobile) topArticles = topArticles.slice(0, 4); //dev
+	if (isMobile) {
+		topPosts = topPosts.slice(0, 4);
+		latestPosts = latestPosts.slice(0, 4);
+	}
 
 	const setBookmark = (event, title) => {
 		event.preventDefault();
@@ -66,10 +58,10 @@ export default (props) => {
 			<div className="main container">
 				<h2>Top Posts {emoji('🏆')}</h2>
 				<section className="topArticles">
-					{topArticles.map(({ title, slug }) => (
-						<Link key={title} to={slug}>
-							<img src={js} alt="" />
-							<h3>{title}</h3>
+					{topPosts.map(({ fields, frontmatter }) => (
+						<Link key={frontmatter.title} to={fields.slug}>
+							<Img fixed={frontmatter.thumbnail.childImageSharp.fixed} />
+							<h3>{frontmatter.title}</h3>
 						</Link>
 					))}
 				</section>
@@ -85,12 +77,16 @@ export default (props) => {
 					</Chip>
 				</div>
 				<section className="latestPosts">
-					{topArticles.map(({ title, slug }) => (
-						<Link key={title} to={slug}>
+					{latestPosts.map(({ fields, frontmatter }) => (
+						<Link key={frontmatter.title} to={fields.slug}>
 							<div className="wrapper">
-								<img src={js} alt="" />
-								<h4>{title}</h4>
-								<div className="bookmark" role="button" onClick={(e) => setBookmark(e, title)}>
+								<Img fixed={frontmatter.thumbnail.childImageSharp.fixed} />
+								<h4>{frontmatter.title}</h4>
+								<div
+									className="bookmark"
+									role="button"
+									onClick={(e) => setBookmark(e, frontmatter.title)}
+								>
 									{emoji('🔖')}
 								</div>
 							</div>
@@ -103,7 +99,6 @@ export default (props) => {
 	);
 };
 
-//TODO: Posts and use different limiter
 export const pageQuery = graphql`
 	query IndexQuery {
 		latest: allMarkdownRemark(limit: 6, sort: { fields: [fields___date], order: DESC }) {
@@ -120,7 +115,7 @@ export const pageQuery = graphql`
 						category
 						thumbnail {
 							childImageSharp {
-								fixed(width: 150, height: 150) {
+								fixed(width: 50, height: 50) {
 									...GatsbyImageSharpFixed
 								}
 							}
@@ -148,7 +143,7 @@ export const pageQuery = graphql`
 						category
 						thumbnail {
 							childImageSharp {
-								fixed(width: 150, height: 150) {
+								fixed(width: 60, height: 60) {
 									...GatsbyImageSharpFixed
 								}
 							}
@@ -160,3 +155,7 @@ export const pageQuery = graphql`
 		}
 	}
 `;
+
+//TODO: clear code
+//Update readme file
+//Clear css and scaffolding to be more clear
