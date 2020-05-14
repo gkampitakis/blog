@@ -1,0 +1,40 @@
+.latestPosts {
+	width: 100%;
+	> a {
+		max-height: 55px;
+		margin: auto;
+		border-radius: 5px;
+		width: 100%;
+		flex-direction: row;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.wrapper {
+			align-items: center;
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			max-height: inherit;
+			h4 {
+				flex: 1;
+				max-height: 34px;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+		}
+	}
+
+	.gatsby-image-wrapper {
+		margin: 0 0.5rem;
+	}
+
+	.bookmark {
+		img {
+			width: 1.5rem !important;
+			height: 1.5rem !important;
+			margin: 1.5rem 0.8rem 1.5rem 1.5rem !important;
+		}
+	}
+}

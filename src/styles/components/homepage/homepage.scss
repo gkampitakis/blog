@@ -1,3 +1,5 @@
+$list-width: 85%;
+
 .homepage {
 	display: flex;
 	width: 100%;
@@ -73,44 +75,7 @@
 		font-size: $h2-font-size-mobile;
 	}
 
-	.topArticles {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		> a {
-			height: 140px;
-			min-height: 140px;
-			transition: transform 0.2s ease, background-color 0.5s ease;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-evenly;
-			align-items: center;
-			border-radius: $border-radius;
-			box-shadow: 0.2rem 0.25rem 0.75rem 0 rgba(0, 0, 0, 0.1);
-			margin: 0.5rem;
-			&:hover {
-				transform: translateY(-2px);
-				box-shadow: 0.5rem 1.25rem 2rem 0 rgba(0, 0, 0, 0.2);
-			}
-			Img {
-				width: 50px;
-				max-width: 50px;
-				max-height: 50px;
-				height: auto;
-			}
-			h3 {
-				margin: 0.5rem auto 0;
-				text-align: center;
-				font-size: 0.9rem;
-				text-overflow: ellipsis;
-				overflow: hidden;
-				width: 150px;
-				display: -webkit-box;
-				-webkit-line-clamp: 3;
-				-webkit-box-orient: vertical;
-			}
-		}
-	}
+	@import './topArticles.scss';
 }
 
 @include respond-to('x-small') {
@@ -153,46 +118,8 @@
 		}
 	}
 
-	.latestPosts {
-		width: 100%;
-		> a {
-			max-height: 55px;
-			margin: auto;
-			border-radius: 5px;
-			width: 100%;
-			flex-direction: row;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-
-			.wrapper {
-				align-items: center;
-				width: 100%;
-				display: flex;
-				flex-direction: row;
-				max-height: inherit;
-				h4 {
-					flex: 1;
-					max-height: 34px;
-					white-space: nowrap;
-					text-overflow: ellipsis;
-					overflow: hidden;
-				}
-			}
-		}
-
-		.gatsby-image-wrapper {
-			margin: 0 0.5rem;
-		}
-
-		.bookmark {
-			img {
-				width: 1.5rem !important;
-				height: 1.5rem !important;
-				margin: 1.5rem 0.8rem 1.5rem 1.5rem !important;
-			}
-		}
-	}
+	@import './latestPosts.scss';
+	@import './projects.scss';
 }
 
 @include respond-to('x-small') {
@@ -203,13 +130,18 @@
 				font-size: $h2-font-size;
 			}
 		}
+
 		.latestPosts {
 			> a {
-				width: 85%;
+				width: $list-width;
 				.wrapper {
 					width: 100%;
 				}
 			}
+		}
+
+		.projects {
+			width: $list-width;
 		}
 	}
 }
