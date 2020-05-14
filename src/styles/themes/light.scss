@@ -38,7 +38,8 @@ $border-color: #ccc;
 	h1,
 	h2,
 	h3,
-	h4 {
+	h4,
+	h5 {
 		color: #111;
 	}
 
@@ -86,6 +87,16 @@ $border-color: #ccc;
 
 			&:hover {
 				background: darken(white, 10);
+			}
+		}
+
+		&.tag {
+			color: $font-color;
+			background: darken($background, 3);
+			border: 1px solid lighten($font-color, 35);
+			&:hover {
+				background: darken($background, 6);
+				color: darken($font-color, 20);
 			}
 		}
 	}

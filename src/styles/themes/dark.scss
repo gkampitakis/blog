@@ -67,7 +67,8 @@ $font-color: #b3b9c5;
 	h1,
 	h2,
 	h3,
-	h4 {
+	h4,
+	h5 {
 		color: #eee;
 	}
 
@@ -91,6 +92,15 @@ $font-color: #b3b9c5;
 	.chip {
 		&.viewAll {
 			background: darken($background, 3);
+			&:hover {
+				background: darken($background, 6);
+			}
+		}
+
+		&.tag {
+			color: $yellow;
+			background: darken($background, 3);
+			border: 1px solid darken($yellow, 55);
 			&:hover {
 				background: darken($background, 6);
 			}
