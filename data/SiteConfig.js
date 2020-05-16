@@ -46,6 +46,7 @@ const config = {
 	userEmail: 'gkabitakis@gmail.com',
 	userTwitter: 'g_kampitakis',
 	userLocation: 'London, UK',
+	instagram: 'https://www.instagram.com/g.kampitakis/',
 	socialLinks: [
 		{
 			label: 'GitHub',

@@ -12,5 +12,3 @@ export default (props) => {
 		<div className={`chip ${type}`}>{children}</div>
 	);
 };
-
-//TODO: tag, popular, new

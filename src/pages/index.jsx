@@ -113,7 +113,6 @@ export const pageQuery = graphql`
 	}
 `;
 
-//TODO: clear code
 //Update readme file
 // setup ghpages module
 //Clear css and scaffolding to be more clear

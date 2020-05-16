@@ -3,6 +3,8 @@ import avatar from '../images/avatar.png';
 import twitter from '../images/twitter.png';
 import gh from '../images/gh.png';
 import ln from '../images/ln.png';
+import ExternalLink from './ExternalLink';
+import config from '../../data/SiteConfig';
 
 export default (props) => {
 	const { socialLinks } = props.config,
@@ -17,17 +19,17 @@ export default (props) => {
 			<div className="container">
 				<div className="avatar">
 					Created by:
-					<a href="https://www.instagram.com/g.kampitakis/" rel="noopener noreferrer" target="_blank">
+					<ExternalLink href={config.instagram}>
 						<img src={avatar} alt="Me" />
-					</a>
+					</ExternalLink>
 				</div>
 				<div className="socials">
 					{socialLinks.map(({ url, image, label }) => {
 						return (
 							<div className="social" key={label}>
-								<a href={url} rel="noopener noreferrer" target="_blank">
+								<ExternalLink href={url}>
 									<img src={images[image]} alt={label} />
-								</a>
+								</ExternalLink>
 							</div>
 						);
 					})}

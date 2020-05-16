@@ -4,6 +4,7 @@ import GitHubButton from 'react-github-btn';
 import projects from '../../../data/projects';
 import Chip from '../Chip';
 import { isMobile } from 'react-device-detect';
+import ExternalLink from '../ExternalLink';
 
 export default function Projects() {
 	return (
@@ -15,10 +16,10 @@ export default function Projects() {
 				{projects.map(({ icon, title, src, description, tags }) => (
 					<div className="projectItem" key={title}>
 						<div className="description">
-							<a href={src} rel="noopener noreferrer" target="_blank">
+							<ExternalLink href={src}>
 								{emoji(icon)}
 								<h4>{title}</h4>
-							</a>
+							</ExternalLink>
 
 							<h5>{description}</h5>
 							<GitHubButton href={src}>source</GitHubButton>
