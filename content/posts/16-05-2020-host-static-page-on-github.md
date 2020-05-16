@@ -1,16 +1,16 @@
 ---
-date: 2015-10-17
-title: 'Setting Up Virtual Hosts'
-thumbnail: '../thumbnails/js.png'
-slug: setting-up-virtual-hosts
-category: Tools
+date: 16-05-2020
+title: 'Host your static page on github pages'
+thumbnail: '../thumbnails/gh.png'
+slug: host-static-page-on-github
+category: Tutorial
 tags:
+    - github
+    - how-to
     - popular
-    - php
-    - apache
 ---
 
-# Quanto et ius coniunctis urbes
+# Host your static page on github pages
 
 ## Sedisti civiliter
 

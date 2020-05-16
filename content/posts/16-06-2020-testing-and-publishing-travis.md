@@ -1,16 +1,16 @@
 ---
-date: 2015-10-17
-title: 'Setting Up Virtual Hosts'
-thumbnail: '../thumbnails/js.png'
-slug: setting-up-virtual-hosts
-category: Tools
+date: 16-05-2020
+title: 'Automate testing and publishing with Travis CI'
+thumbnail: '../thumbnails/travis.png'
+slug: testing-and-publishing-travis
+category: Development
 tags:
     - popular
-    - php
-    - apache
+    - travis
+    - CD/CI
 ---
 
-# Quanto et ius coniunctis urbes
+# Automate testing and publishing with Travis CI
 
 ## Sedisti civiliter
 

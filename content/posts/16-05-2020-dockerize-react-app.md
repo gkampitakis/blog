@@ -1,16 +1,16 @@
 ---
-date: 2015-10-17
-title: 'Setting Up Virtual Hosts'
-thumbnail: '../thumbnails/js.png'
-slug: setting-up-virtual-hosts
-category: Tools
+date: 16-05-2020
+title: 'Dockerize React App'
+thumbnail: '../thumbnails/docker.png'
+slug: dockerize-react-app
+category: Tutorial
 tags:
     - popular
-    - php
-    - apache
+    - docker
+    - react
 ---
 
-# Quanto et ius coniunctis urbes
+# Dockerize React App
 
 ## Sedisti civiliter
 

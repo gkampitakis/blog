@@ -1,16 +1,16 @@
 ---
-date: 2015-10-17
-title: 'Setting Up Virtual Hosts'
-thumbnail: '../thumbnails/js.png'
-slug: setting-up-virtual-hosts
-category: Tools
+date: 16-05-2020
+title: 'Write unit tests for your server with Jest'
+thumbnail: '../thumbnails/jest.png'
+slug: write-unit-tests-jest
+category: Development
 tags:
+    - jest
+    - unit-tests
     - popular
-    - php
-    - apache
 ---
 
-# Quanto et ius coniunctis urbes
+# Write unit tests for your server with Jest
 
 ## Sedisti civiliter
 

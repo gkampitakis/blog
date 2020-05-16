@@ -1,16 +1,17 @@
 ---
-date: 2015-10-17
-title: 'Setting Up Virtual Hosts'
-slug: setting-up-virtual-hosts
-thumbnail: '../thumbnails/js.png'
-category: Tools
+date: 16-05-2020
+title: 'How to create an npm module and publish it'
+slug: how-to-publish-on-npm
+thumbnail: '../thumbnails/npm.png'
+category: Development
 tags:
     - popular
-    - php
-    - apache
+    - npm
+    - how-to
+    - popular
 ---
 
-# Quanto et ius coniunctis urbes
+# How to create an npm module and publish it
 
 ## Sedisti civiliter
 
