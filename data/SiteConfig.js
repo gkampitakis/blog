@@ -37,7 +37,7 @@ const config = {
 	siteTitleAlt: 'George Kampitakis Posts',
 	siteLogo: '/logos/logo-512.png',
 	siteUrl: 'localhost:8000',
-	pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
+	pathPrefix: '/posts', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
 	siteDescription: 'A place where I can share posts on subjects I work or interested in', // Website description used for RSS feeds/meta description tag.
 	googleAnalyticsID: '', //TODO:
 	dateFromFormat: 'DD-MM-YYYY', // Date format used in the frontmatter.

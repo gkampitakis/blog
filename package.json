@@ -51,6 +51,7 @@
 		"eslint-plugin-import": "^2.20.2",
 		"eslint-plugin-jsx-a11y": "^6.2.3",
 		"eslint-plugin-react": "^7.19.0",
+		"gh-pages": "^2.2.0",
 		"husky": "^4.2.5",
 		"prettier": "^2.0.4",
 		"pretty-quick": "^2.0.1",
@@ -69,6 +70,7 @@
 	],
 	"license": "MIT",
 	"scripts": {
+		"deploy": "gatsby build --prefix-paths && gh-pages -d public",
 		"dev": "gatsby develop",
 		"serve": "gatsby serve",
 		"build": "gatsby build",
