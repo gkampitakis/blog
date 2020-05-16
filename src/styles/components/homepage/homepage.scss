@@ -142,6 +142,9 @@ $list-width: 85%;
 
 		.projects {
 			width: $list-width;
+			.projectItem {
+				width: 95%;
+			}
 		}
 	}
 }

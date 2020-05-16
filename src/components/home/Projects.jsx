@@ -12,14 +12,14 @@ export default function Projects() {
 				<h2>Projects {emoji('📚')}</h2>
 			</div>
 			<section className="projects">
-				{projects.map((
-					//TODO: fix colors for both modes
-					{ icon, title, src, description, tags }
-				) => (
+				{projects.map(({ icon, title, src, description, tags }) => (
 					<div className="projectItem" key={title}>
 						<div className="description">
-							{emoji(icon)}
-							<h4>{title}</h4>
+							<a href={src} rel="noopener noreferrer" target="_blank">
+								{emoji(icon)}
+								<h4>{title}</h4>
+							</a>
+
 							<h5>{description}</h5>
 							<GitHubButton href={src}>source</GitHubButton>
 						</div>
