@@ -71,7 +71,7 @@ export const pageQuery = graphql`
 						category
 						thumbnail {
 							childImageSharp {
-								fluid {
+								fluid(quality: 100) {
 									...GatsbyImageSharpFluid
 								}
 							}
@@ -99,7 +99,7 @@ export const pageQuery = graphql`
 						category
 						thumbnail {
 							childImageSharp {
-								fluid {
+								fluid(quality: 100) {
 									...GatsbyImageSharpFluid
 								}
 							}

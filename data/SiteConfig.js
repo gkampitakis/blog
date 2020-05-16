@@ -29,17 +29,18 @@ const config = {
                     '..-.....'                   
     
 **** This project is created by G.Kampitakis ****
-**** You can view the code at : github.com/gkampitakis/gkampitakis ****
+**** You can view the code at : github.com/gkampitakis/posts ****
     
     `,
 	siteTitle: 'George Kampitakis',
 	siteTitleShort: 'G.Kampitakis',
 	siteTitleAlt: 'George Kampitakis Posts',
-	siteLogo: '/logos/logo-512.png',
+	siteLogo: '/logos/logo-32.png',
 	siteUrl: 'localhost:8000',
 	pathPrefix: '/posts', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
-	siteDescription: 'A place where I can share posts on subjects I work or interested in', // Website description used for RSS feeds/meta description tag.
-	googleAnalyticsID: '', //TODO:
+	siteDescription:
+		'I love coding and learning new things, so this is a portal for sharing what I find interesting. My current focus is on modern Javascript, Node.js, and development',
+	googleAnalyticsID: 'UA-155519688-1',
 	dateFromFormat: 'DD-MM-YYYY', // Date format used in the frontmatter.
 	dateFormat: 'DD/MM/YYYY', // Date format for display.
 	userName: 'George',
