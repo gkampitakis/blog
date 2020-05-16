@@ -35,10 +35,9 @@ export default (props) => {
 							Hello World <span className="wave">{emoji('👋')}</span>, I am George
 						</h1>
 						<span>
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-							been the industrys standard dummy text ever since the 1500s, when an unknown printer took a
-							galley of type and scrambled it to make a type specimen book. It has survived not only five
-							centuries, but also the leap into electronic typesetting
+							I am a fullstack developer based in London. I love coding and learning new things, so this
+							is a portal for sharing what I find interesting. My current focus is on modern Javascript,
+							Node.js, and development.
 						</span>
 					</div>
 					<div className="avatar">
@@ -49,8 +48,8 @@ export default (props) => {
 					</div>
 				</div>
 			</div>
-			<TopPosts posts={latestPosts} />
-			<LatestPosts posts={topPosts} />
+			<TopPosts posts={topPosts} />
+			<LatestPosts posts={latestPosts} />
 			<ProjectsList />
 		</Layout>
 	);
@@ -72,8 +71,8 @@ export const pageQuery = graphql`
 						category
 						thumbnail {
 							childImageSharp {
-								fixed(width: 50, height: 50) {
-									...GatsbyImageSharpFixed
+								fluid {
+									...GatsbyImageSharpFluid
 								}
 							}
 						}
@@ -100,8 +99,8 @@ export const pageQuery = graphql`
 						category
 						thumbnail {
 							childImageSharp {
-								fixed(width: 60, height: 60) {
-									...GatsbyImageSharpFixed
+								fluid {
+									...GatsbyImageSharpFluid
 								}
 							}
 						}

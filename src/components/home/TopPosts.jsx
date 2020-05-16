@@ -13,7 +13,7 @@ export default function TopPosts(props) {
 			<section className="topArticles">
 				{posts.map(({ fields, frontmatter }) => (
 					<Link key={frontmatter.title} to={fields.slug}>
-						<Img fixed={frontmatter.thumbnail.childImageSharp.fixed} />
+						<Img fluid={frontmatter.thumbnail.childImageSharp.fluid} />
 						<h3>{frontmatter.title}</h3>
 					</Link>
 				))}

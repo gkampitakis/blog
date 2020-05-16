@@ -24,7 +24,7 @@ export default function LatestPosts(props) {
 				{posts.map(({ fields, frontmatter }) => (
 					<Link key={frontmatter.title} to={fields.slug}>
 						<div className="wrapper">
-							<Img fixed={frontmatter.thumbnail.childImageSharp.fixed} />
+							<Img fluid={frontmatter.thumbnail.childImageSharp.fluid} />
 							<h4>{frontmatter.title}</h4>
 							<div className="bookmark" role="button" onClick={(e) => setBookmark(e, frontmatter.title)}>
 								{emoji('🔖')}
