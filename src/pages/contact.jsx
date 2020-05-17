@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Layout from '../layout';
-import About from '../components/About';
+import Contact from '../components/Contact';
 import config from '../../data/SiteConfig';
 
 export default (props) => {
@@ -9,7 +9,7 @@ export default (props) => {
 		<Layout>
 			<div className="about-container">
 				<Helmet title={`About | ${config.siteTitle}`} />
-				<About />
+				<Contact />
 			</div>
 		</Layout>
 	);
