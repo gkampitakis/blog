@@ -6,7 +6,9 @@ import Chip from '../Chip';
 import { isMobile } from 'react-device-detect';
 import ExternalLink from '../ExternalLink';
 
-export default function Projects() {
+export default function Projects(props) {
+	const { theme } = props;
+
 	return (
 		<div className="secondary container">
 			<div className="title">
@@ -22,7 +24,9 @@ export default function Projects() {
 							</ExternalLink>
 
 							<h5>{description}</h5>
-							<GitHubButton href={src}>source</GitHubButton>
+							<GitHubButton data-color-scheme={`light: ${theme ? 'light' : 'dark'};`} href={src}>
+								source
+							</GitHubButton>
 						</div>
 						<div className="tagList">
 							{tags.map((tag) => <Chip type="tag">{tag}</Chip>).slice(0, isMobile ? 3 : 10)}

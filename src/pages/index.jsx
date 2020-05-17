@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import emoji from 'react-easy-emoji';
 import Layout from '../layout';
@@ -11,10 +11,12 @@ import { isMobile } from 'react-device-detect';
 import LatestPosts from '../components/home/LatestPosts';
 import TopPosts from '../components/home/TopPosts';
 import ProjectsList from '../components/home/Projects';
+import ThemeContext from '../context/ThemeContext';
 
 export default (props) => {
 	const { latest, popular } = props.data,
-		github = config.socialLinks[0].url;
+		github = config.socialLinks[0].url,
+		{ dark } = useContext(ThemeContext);
 
 	let topPosts = popular.edges.map(({ node }) => node),
 		latestPosts = latest.edges.map(({ node }) => node);
@@ -42,7 +44,11 @@ export default (props) => {
 					</div>
 					<div className="avatar">
 						<img src={avatar} alt="Avatar" />
-						<GitHubButton href={github} data-size="large">
+						<GitHubButton
+							data-color-scheme={`light: ${dark ? 'light' : 'dark'};`}
+							href={github}
+							data-size="large"
+						>
 							gkampitakis
 						</GitHubButton>
 					</div>
@@ -50,7 +56,7 @@ export default (props) => {
 			</div>
 			<TopPosts posts={topPosts} />
 			<LatestPosts posts={latestPosts} />
-			<ProjectsList />
+			<ProjectsList theme={dark} />
 		</Layout>
 	);
 };

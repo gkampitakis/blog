@@ -34,11 +34,11 @@
 		"react-device-detect": "^1.11.14",
 		"react-dom": "^16.13.1",
 		"react-easy-emoji": "^1.4.0",
-		"react-github-btn": "^1.1.1",
+		"react-github-btn": "^1.2.0",
 		"react-helmet": "^6.0.0",
 		"react-share": "^4.1.0",
-		"sharp": "^0.22.1",
 		"react-twitter-widgets": "^1.7.1",
+		"sharp": "^0.22.1",
 		"url-join": "^4.0.1"
 	},
 	"devDependencies": {
