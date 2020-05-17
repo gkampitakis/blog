@@ -1,4 +1,4 @@
-# Posts
+# Blog
 
 My personal site where I write tech posts. Running on Gatsby, React and Node.js.
 

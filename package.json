@@ -1,7 +1,7 @@
 {
-	"name": "personal-blog",
+	"name": "blog",
 	"description": "A blog for posting personal articles",
-	"version": "1.1.0",
+	"version": "1.0.0",
 	"author": "Georgios Kampitakis",
 	"dependencies": {
 		"gatsby": "^2.20.18",
