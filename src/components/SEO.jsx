@@ -4,8 +4,6 @@ import urljoin from 'url-join';
 import moment from 'moment';
 import config from '../../data/SiteConfig';
 
-//TODO: verify all needed values here are passed correctly
-
 export default (props) => {
 	const { postNode, postPath, postSEO } = props;
 	let title, description, image, postURL;

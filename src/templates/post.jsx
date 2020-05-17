@@ -7,9 +7,6 @@ import PostTags from '../components/PostTags';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
 
-//TODO:work on designs here, verify all data are passed correctly
-//TODO: review SEO and helmet
-
 export default (props) => {
 	const { data, pageContext } = props,
 		{ slug } = pageContext,
@@ -22,25 +19,26 @@ export default (props) => {
 
 	return (
 		<Layout>
-			<div>
+			<div className="post">
 				<Helmet>
 					<title>{`${post.title} | ${config.siteTitle}`}</title>
 				</Helmet>
 				<SEO postPath={slug} postNode={postNode} postSEO />
-				<div>
+				<div className="header">
+					{/* TODO:add image like a header or thumbnail */}
 					<h1>{post.title}</h1>
-					<div dangerouslySetInnerHTML={{ __html: postNode.html }} />
 					<div className="post-meta">
 						<PostTags tags={post.tags} />
 					</div>
 					<UserInfo config={config} />
+					{/* TODO: add follow  on github */}
+					<div dangerouslySetInnerHTML={{ __html: postNode.html }} />
 				</div>
 			</div>
 		</Layout>
 	);
 };
 
-/* eslint no-undef: "off" */
 export const pageQuery = graphql`
 	query BlogPostBySlug($slug: String!) {
 		markdownRemark(fields: { slug: { eq: $slug } }) {

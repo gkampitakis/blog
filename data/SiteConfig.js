@@ -36,7 +36,7 @@ const config = {
 	siteTitleShort: 'G.Kampitakis',
 	siteTitleAlt: 'George Kampitakis Posts',
 	siteLogo: '/logos/logo-32.png',
-	siteUrl: 'localhost:8000',
+	siteUrl: 'https://gkampitakis.github.io',
 	pathPrefix: '/posts', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
 	siteDescription:
 		'I love coding and learning new things, so this is a portal for sharing what I find interesting. My current focus is on modern Javascript, Node.js, and development',

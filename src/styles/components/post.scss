@@ -1,0 +1,7 @@
+.post {
+}
+
+@include respond-to('x-small') {
+	.post {
+	}
+}

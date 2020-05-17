@@ -111,7 +111,3 @@ export const pageQuery = graphql`
 		}
 	}
 `;
-
-//Update readme file
-// setup ghpages module
-//Clear css and scaffolding to be more clear
