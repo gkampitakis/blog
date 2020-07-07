@@ -12,7 +12,7 @@ export default function TopPosts(props) {
 			<h2>Top Posts {emoji('🏆')}</h2>
 			<section className="topArticles">
 				{posts.map(({ fields, frontmatter }) => (
-					<Link key={frontmatter.title} to={fields.slug}>
+					<Link key={frontmatter.title} to="/404">
 						<Img fluid={frontmatter.thumbnail.childImageSharp.fluid} />
 						<h3>{frontmatter.title}</h3>
 					</Link>

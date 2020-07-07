@@ -22,7 +22,7 @@ export default function LatestPosts(props) {
 			</div>
 			<section className="latestPosts">
 				{posts.map(({ fields, frontmatter }) => (
-					<Link key={frontmatter.title} to={fields.slug}>
+					<Link key={frontmatter.title} to="/404">
 						<div className="wrapper">
 							<Img fluid={frontmatter.thumbnail.childImageSharp.fluid} />
 							<h4>{frontmatter.title}</h4>

@@ -73,12 +73,12 @@ const config = {
 		},
 		{
 			name: 'Notes',
-			link: '/notes',
+			link: '/',
 			icon: '📝'
 		},
 		{
 			name: 'Contact',
-			link: '/contact',
+			link: '/',
 			icon: '📬'
 		}
 	],

@@ -28,3 +28,5 @@ In order to run this site locally you need:
     ```bash
     npm run dev
     ```
+
+**Supported Node version: 12**
