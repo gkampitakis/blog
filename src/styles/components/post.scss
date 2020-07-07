@@ -1,4 +1,10 @@
 .post {
+	.header {
+		img {
+			width: 60px;
+			border-radius: 30px;
+		}
+	}
 }
 
 @include respond-to('x-small') {

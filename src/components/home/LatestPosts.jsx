@@ -17,6 +17,7 @@ export default function LatestPosts(props) {
 			<div className="title">
 				<h2>Latest Posts {emoji('📰')}</h2>
 				<Chip to="/test" type="viewAll">
+					{/*FIXME: */}
 					View All
 				</Chip>
 			</div>

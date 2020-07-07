@@ -2,10 +2,11 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import Layout from '../layout';
-import UserInfo from '../components/UserInfo';
+import avatar from '../images/avatar.jpg';
 import PostTags from '../components/PostTags';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
+import Img from 'gatsby-image';
 
 export default (props) => {
 	const { data, pageContext } = props,
@@ -24,16 +25,16 @@ export default (props) => {
 					<title>{`${post.title} | ${config.siteTitle}`}</title>
 				</Helmet>
 				<SEO postPath={slug} postNode={postNode} postSEO />
+				{/* TODO:add image like a header or thumbnail */}
+				<h1>{post.title}</h1>
+				<span>{post.date}</span>
+				<Img fixed={post.thumbnail.childImageSharp.fixed} />
 				<div className="header">
-					{/* TODO:add image like a header or thumbnail */}
-					<h1>{post.title}</h1>
-					<div className="post-meta">
-						<PostTags tags={post.tags} />
-					</div>
-					<UserInfo config={config} />
-					{/* TODO: add follow  on github */}
-					<div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+					<img src={avatar} alt="Avatar" />
+					<PostTags tags={post.tags} />
+					{/* TODO: add share button and bookmark button */}
 				</div>
+				<div dangerouslySetInnerHTML={{ __html: postNode.html }} />
 			</div>
 		</Layout>
 	);
@@ -43,7 +44,6 @@ export const pageQuery = graphql`
 	query BlogPostBySlug($slug: String!) {
 		markdownRemark(fields: { slug: { eq: $slug } }) {
 			html
-			timeToRead
 			excerpt
 			frontmatter {
 				title
@@ -60,7 +60,6 @@ export const pageQuery = graphql`
 			}
 			fields {
 				slug
-				date
 			}
 		}
 	}

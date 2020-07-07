@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ThemeContext from '../context/ThemeContext';
+import GitHubButton from 'react-github-btn';
 import { Follow } from 'react-twitter-widgets';
+
+// TODO: this should be one contact page
 
 export default (props) => {
 	const { userTwitter } = props.config,
-		{ expanded } = props;
+		github = props.config.socialLinks[0].url,
+		{ dark } = useContext(ThemeContext);
 
-	return <Follow username={userTwitter} options={{ count: expanded ? true : 'none' }} />;
+	return (
+		<>
+			<Follow username={userTwitter} options={{ count: 'none' }} />
+			{/* TODO: add font-weight here */}
+			<GitHubButton data-color-scheme={`light: ${dark ? 'light' : 'dark'};`} href={github}>
+				Follow @gkampitakis
+			</GitHubButton>
+		</>
+	);
 };

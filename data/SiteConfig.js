@@ -37,7 +37,7 @@ const config = {
 	siteTitleAlt: 'George Kampitakis Posts',
 	siteLogo: '/logos/logo-32.png',
 	siteUrl: 'https://gkampitakis.github.io',
-	pathPrefix: '/blog', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
+	pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
 	siteDescription:
 		'I love coding and learning new things, so this is a portal for sharing what I find interesting. My current focus is on modern Javascript, Node.js, and development',
 	googleAnalyticsID: 'UA-155519688-1',
