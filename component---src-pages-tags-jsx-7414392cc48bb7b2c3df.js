@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{PcuZ:function(n,e,a){"use strict";a.r(e),a.d(e,"default",(function(){return c})),a.d(e,"pageQuery",(function(){return o}));var t=a("q1tI"),r=a.n(t),u=a("hpys");function c(n){var e=n.data;return console.log(e),r.a.createElement(u.a,null,r.a.createElement("div",null,"Tags Page"))}var o="945849964"}}]);
+//# sourceMappingURL=component---src-pages-tags-jsx-7414392cc48bb7b2c3df.js.map

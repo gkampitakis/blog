@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{gDHQ:function(n,e,t){"use strict";t.r(e);var a=t("q1tI"),o=t.n(a),s=t("hpys");e.default=function(n){return o.a.createElement(s.a,null,o.a.createElement("div",null,"List of notes"))}}}]);
+//# sourceMappingURL=component---src-pages-notes-jsx-898ae366eea9a87c137a.js.map
